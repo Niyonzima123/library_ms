@@ -1,0 +1,30 @@
+# Uploads - user generated content
+uploads/ebooks/*
+uploads/covers/*
+uploads/documents/*
+!uploads/ebooks/.gitkeep
+!uploads/covers/.gitkeep
+!uploads/documents/.gitkeep
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# XAMPP / PHP specific
+php_error_log
+error_log
+
+# Environment files
+.env
+.env.local
+
+# Database dumps
+*.sql.bak
+*.sql.gz
