@@ -1,0 +1,40 @@
+RewriteEngine On
+
+# Force HTTPS
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Block sensitive files
+<FilesMatch "\.(sql|md|json|log|ini|env|gitkeep|gitignore)$">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>
+
+# Block hidden files
+<FilesMatch "^\.">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>
+
+# Block direct access to config and includes
+RewriteRule ^config/ - [F,L]
+RewriteRule ^includes/ - [F,L]
+RewriteRule ^\.git/ - [F,L]
+
+# Block PHP execution in uploads
+RewriteRule ^uploads/.*\.php$ - [F,L]
+
+# Security Headers
+<IfModule mod_headers.c>
+    Header always set X-Frame-Options "SAMEORIGIN"
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set X-XSS-Protection "1; mode=block"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://fonts.googleapis.com; font-src 'self' https://cdn.jsdelivr.net https://fonts.gstatic.com; img-src 'self' data: blob:; connect-src 'self'; frame-ancestors 'self'; base-uri 'self'; form-action 'self'"
+    Header always set Strict-Transport-Security "max-age=31536000"
+    Header always set Permissions-Policy "geolocation=(), microphone=(), camera=()"
+</IfModule>
+
+ServerSignature Off
+Options -Indexes
+AddDefaultCharset UTF-8

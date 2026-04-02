@@ -1,0 +1,7 @@
+# Prevent PHP execution in uploads
+<FilesMatch "\.(php|php5|phtml|pht)$">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>
+
+Options -Indexes
