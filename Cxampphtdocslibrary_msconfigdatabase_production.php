@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 // ============================================
 // Production Database Configuration
 // InfinityFree Hosting

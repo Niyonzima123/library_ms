@@ -14,7 +14,17 @@ if (session_status() === PHP_SESSION_NONE) {
 
 // Site Configuration
 define('SITE_NAME', 'University Library Management System');
-define('SITE_URL', 'http://localhost/library_ms');
+
+// Auto-detect URL (works on both localhost and production)
+if (isset($_SERVER['HTTP_HOST']) && strpos($_SERVER['HTTP_HOST'], 'localhost') === false) {
+    // Production (InfinityFree)
+    $protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? 'https' : 'http';
+    define('SITE_URL', $protocol . '://' . $_SERVER['HTTP_HOST']);
+} else {
+    // Local development (XAMPP)
+    define('SITE_URL', 'http://localhost/library_ms');
+}
+
 define('ADMIN_URL', SITE_URL . '/admin');
 define('STUDENT_URL', SITE_URL . '/student');
 
