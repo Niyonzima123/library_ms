@@ -78,6 +78,59 @@ library_ms/
 └── register.php        # Student registration
 ```
 
+
+📚 Library Management System
+
+A full-stack web-based Library Management System designed to automate and simplify library operations such as book management, borrowing, and returns. The system replaces manual record-keeping with a structured digital solution using PHP and MySQL.
+
+This project demonstrates my ability to design database-driven applications and implement real-world CRUD systems.
+
+🚀 Project Overview
+
+The system allows librarians and students to efficiently manage library resources. It provides a centralized platform for tracking books, managing users, and handling borrowing processes in an organized way.
+
+✨ Key Features
+Book management (add, update, delete books)
+Student/user registration system
+Book borrowing and return tracking
+Search functionality for available books
+Admin dashboard for library control
+Real-time database updates
+🛠️ Technologies Used
+PHP (Backend development)
+MySQL (Database management)
+HTML5, CSS3, JavaScript (Frontend)
+XAMPP / Local server environment
+🧠 Core Functionalities
+Full CRUD operations for books and users
+Borrowing and return logic with database tracking
+Search and filtering system for books
+Role-based access (Admin / User)
+Structured relational database design
+🎯 Project Impact
+
+This system improves library operations by reducing manual paperwork, improving book tracking accuracy, and making it easier for students to access and borrow learning materials efficiently.
+
+⚙️ How to Run the Project
+Install XAMPP or similar local server
+Import the MySQL database into phpMyAdmin
+Place the project folder in htdocs
+Start Apache and MySQL
+Open browser: http://localhost/project-folder-name
+📌 Future Improvements
+Barcode scanning for books
+Online reservation system
+Email notifications for overdue books
+Role-based authentication improvements
+Cloud deployment version
+👨‍💻 Author
+
+Isaac Niyonzima
+Computer Science Student | Software Developer
+Founder of VAXA – Business Management System
+LinkedIn: www.linkedin.com/in/professionalisaac
+GitHub: https://github.com/Niyonzima123
+
 ## License
 
 This project is for educational purposes.
